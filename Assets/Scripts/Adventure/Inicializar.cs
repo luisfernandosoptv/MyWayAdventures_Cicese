@@ -99,6 +99,7 @@ public class Inicializar : MonoBehaviour
         }
         else
         {
+            
             NombreJugador=nameInput.text;
             ApellidoP=apellidoPInput.text;
             ApellidoM=apellidoMInput.text;
@@ -106,9 +107,12 @@ public class Inicializar : MonoBehaviour
             Municipio=municipioInput.text;
             Localidad=localidadInput.text;
             EstadoIndice=estadoInput.value;
+            if(int.Parse(Edad)>0){
             MenuRegistro.SetActive(false);
             MenuPersonaje.SetActive(true);
             DesactivaImagenes();
+            }
+
         }
 
     }
