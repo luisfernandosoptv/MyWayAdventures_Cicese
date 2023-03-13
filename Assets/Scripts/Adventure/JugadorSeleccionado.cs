@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class JugadorSeleccionado : MonoBehaviour
 {
+    public List<ListaTotal> ObjetosListado = new List<ListaTotal>();
     public GameObject Personaje1;
     public GameObject Personaje2;
     public GameObject Personaje3;
@@ -43,21 +44,11 @@ public class JugadorSeleccionado : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        P1 = PlayerPrefs.GetInt("SeleccionePersonaje1") == 1;
-        P2 = PlayerPrefs.GetInt("SeleccionePersonaje2") == 1;
-        P3 = PlayerPrefs.GetInt("SeleccionePersonaje3") == 1;
-        P4 = PlayerPrefs.GetInt("SeleccionePersonaje4") == 1;
-        P5 = PlayerPrefs.GetInt("SeleccionePersonaje5") == 1;
-        P6 = PlayerPrefs.GetInt("SeleccionePersonaje6") == 1;
-        P7 = PlayerPrefs.GetInt("SeleccionePersonaje7") == 1;
-        P8 = PlayerPrefs.GetInt("SeleccionePersonaje8") == 1;
-        P9 = PlayerPrefs.GetInt("SeleccionePersonaje9") == 1;
-        P10 = PlayerPrefs.GetInt("SeleccionePersonaje10") == 1;
-        P11 = PlayerPrefs.GetInt("SeleccionePersonaje11") == 1;
-        P12 = PlayerPrefs.GetInt("SeleccionePersonaje12") == 1;
-        P13 = PlayerPrefs.GetInt("SeleccionePersonaje13") == 1;
-        P14 = PlayerPrefs.GetInt("SeleccionePersonaje14") == 1;
-        
+        for (int i = 0; i < ObjetosListado.Count; i++)
+        {
+            ObjetosListado[i].P = PlayerPrefs.GetInt("SeleccionePersonaje"+(i+1))==1;
+            ObjetosListado[i].P=true;
+        }
         if (P1 == true)
         {
             Personaje1.SetActive(true);
@@ -299,4 +290,9 @@ public class JugadorSeleccionado : MonoBehaviour
         }
 
     }
+    [System.Serializable] public class ListaTotal
+{
+    public GameObject Objetos; 
+    public bool P;
+}
 }

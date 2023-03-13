@@ -901,7 +901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec26df81321e654eae21a5562cf6c70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TiempoDeEspera: 25
+  TiempoDeEspera: 5
   texto: {fileID: 489392820}
 --- !u!4 &1793826280
 Transform:

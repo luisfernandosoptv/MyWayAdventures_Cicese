@@ -1333,6 +1333,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 686bba0608157af41a93e83b48afd66e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ObjetosListado:
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
+  - Objetos: {fileID: 1998939388}
+    P: 0
   Personaje1: {fileID: 1998939388}
   Personaje2: {fileID: 0}
   Personaje3: {fileID: 0}
@@ -2178,7 +2207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1404596883
 MonoBehaviour:
   m_ObjectHideFlags: 0
