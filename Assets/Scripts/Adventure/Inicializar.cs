@@ -6,9 +6,10 @@ using Mono.Data.Sqlite;
 using System.Data;
 public class Inicializar : MonoBehaviour
 {
-    public List<ListaTotal> ObjetosListado = new List<ListaTotal>();
+    public List<ObjetosListado> ObjetosListado = new List<ObjetosListado>();
     public List<ListaDatos> DatosListado = new List<ListaDatos>();
     public Dropdown estadoInput;
+    public int PerActivo;
     [SerializeField] private string Edad;
     [SerializeField] private int EstadoIndice;
     [SerializeField] private string Estado;
@@ -28,12 +29,17 @@ public class Inicializar : MonoBehaviour
         for(int i = 0; i < ObjetosListado.Count; i++)
         {
             ObjetosListado[i].P=PlayerPrefs.GetInt("SeleccionePersonaje"+(i+1))==1;
+            ObjetosListado[i].numero=i;
         }
     }
-    void Start() {
+    private void Start() {
         LimpiarCampos();
         Regresar(); 
         ComienzaPrefs();
+        for(int i = 0; i < ObjetosListado.Count; i++)
+        {
+            ObjetosListado[i].numero=i;
+        }
     }   
     public void registro()
     {
@@ -90,7 +96,7 @@ public class Inicializar : MonoBehaviour
         MenuPersonaje.SetActive(false);
         menuMensaje.SetActive(false);
     }
-   void AsignaPlayerprefs() 
+   private void AsignaPlayerprefs() 
    {
     for (int i = 0; i < DatosListado.Count; i++)
     {
@@ -133,15 +139,12 @@ public class Inicializar : MonoBehaviour
         ObjetosListado[numero].Objetos.SetActive(true);
         ObjetosListado[numero].P=true;
     }
-
-  
     public void Jugar () {
         Guardar();
         ubicaPersonajes();
         VerificaEstado();
         IngresaDatos();
     }
-
     private void ubicaPersonajes() 
     {
         for(int i = 0; i < ObjetosListado.Count; i++)
@@ -206,7 +209,7 @@ public class Inicializar : MonoBehaviour
     {
         for(int i = 0; i < ObjetosListado.Count; i++)
         {
-           PlayerPrefs.SetInt("SeleccionePersonaje"+ObjetosListado[i].P, ObjetosListado[i].P ? 1 : 0);
+           PlayerPrefs.SetInt("SeleccionePersonaje"+ObjetosListado[i].numero, ObjetosListado[i].P ? 1 : 0);
         }
     }
     //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -219,13 +222,14 @@ public class Inicializar : MonoBehaviour
     #endif
     }
 }
+
 //----Clases serializables para mandar llamar arriba
-[System.Serializable] public class ListaTotal
+[System.Serializable] public class ObjetosListado
 {
     public GameObject Objetos; 
     public bool P;
+    public int numero;
 }
-
 [System.Serializable] public class ListaDatos
 {
     public InputField MisImput;

@@ -9522,7 +9522,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 7.016667
-        value: {x: 1.438, y: 0.791, z: 1.935}
+        value: {x: 1.374, y: 1.278, z: 1.965}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -9633,7 +9633,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 7.016667
-        value: 1.438
+        value: 1.374
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -9715,7 +9715,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 7.016667
-        value: 0.791
+        value: 1.278
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -9797,7 +9797,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 7.016667
-        value: 1.935
+        value: 1.965
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -47965,30 +47965,37 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 3.5
-    functionName: TomarTelefono
+    functionName: AnimGeneral
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 7
-    functionName: Sentarse
+    functionName: AnimGeneral
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 1
     messageOptions: 0
   - time: 10.5
-    functionName: Pararse
+    functionName: AnimGeneral
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 2
     messageOptions: 0
   - time: 14
-    functionName: Peinarse
+    functionName: AnimGeneral
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 3
+    messageOptions: 0
+  - time: 17.5
+    functionName: AnimGeneral
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 4
     messageOptions: 0

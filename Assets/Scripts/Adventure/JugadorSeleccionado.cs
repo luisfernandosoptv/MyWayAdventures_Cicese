@@ -7,292 +7,37 @@ using UnityEngine.SceneManagement;
 public class JugadorSeleccionado : MonoBehaviour
 {
     public List<ListaTotal> ObjetosListado = new List<ListaTotal>();
-    public GameObject Personaje1;
-    public GameObject Personaje2;
-    public GameObject Personaje3;
-    public GameObject Personaje4;
-    public GameObject Personaje5;
-    public GameObject Personaje6;
-    public GameObject Personaje7;
-    public GameObject Personaje8;
-    public GameObject Personaje9;
-    public GameObject Personaje10;
-    public GameObject Personaje11;
-    public GameObject Personaje12;
-    public GameObject Personaje13;
-    public GameObject Personaje14;
-    public bool P1;
-    public bool P2;
-    public bool P3;
-    public bool P4;
-    public bool P5;
-    public bool P6;
-    public bool P7;
-    public bool P8;
-    public bool P9;
-    public bool P10;
-    public bool P11;
-    public bool P12;
-    public bool P13;
-    public bool P14;
-    // Start is called before the first frame update
+    public int Activo;
     void Start()
     {
-        
+        ActivaPer();
+        CachaPrefs();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void CachaPrefs(){
+        for (int i = 0; i < ObjetosListado.Count; i++)
+        {
+            ObjetosListado[i].P = PlayerPrefs.GetInt("SeleccionePersonaje"+ObjetosListado[i].Activo)==1;
+             if(ObjetosListado[i].P==true)
+            {
+                ObjetosListado[i].Objetos.SetActive(true);
+            }
+            else
+        {
+            Destroy(ObjetosListado[i].Objetos);
+        } 
+        }
+    }
+    private void ActivaPer()
     {
         for (int i = 0; i < ObjetosListado.Count; i++)
         {
-            ObjetosListado[i].P = PlayerPrefs.GetInt("SeleccionePersonaje"+(i+1))==1;
-            ObjetosListado[i].P=true;
+            ObjetosListado[i].Activo=i;
         }
-        if (P1 == true)
-        {
-            Personaje1.SetActive(true);
-            Destroy(Personaje2);
-            Destroy(Personaje3);
-            Destroy(Personaje4);
-            Destroy(Personaje5);
-            Destroy(Personaje6);
-            Destroy(Personaje7);
-            Destroy(Personaje8);
-            Destroy(Personaje9);
-            Destroy(Personaje10);
-            Destroy(Personaje11);
-            Destroy(Personaje12);
-            Destroy(Personaje13);
-            Destroy(Personaje14);
-        }
-                if (P2 == true)
-        {
-            Personaje2.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje3);
-            Destroy(Personaje4);
-            Destroy(Personaje5);
-            Destroy(Personaje6);
-            Destroy(Personaje7);
-            Destroy(Personaje8);
-            Destroy(Personaje9);
-            Destroy(Personaje10);
-            Destroy(Personaje11);
-            Destroy(Personaje12);
-            Destroy(Personaje13);
-            Destroy(Personaje14);
-        }
-                if (P3 == true)
-        {
-            Personaje3.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje2);
-            Destroy(Personaje4);
-            Destroy(Personaje5);
-            Destroy(Personaje6);
-            Destroy(Personaje7);
-            Destroy(Personaje8);
-            Destroy(Personaje9);
-            Destroy(Personaje10);
-            Destroy(Personaje11);
-            Destroy(Personaje12);
-            Destroy(Personaje13);
-            Destroy(Personaje14);
-        }
-                if (P4 == true)
-        {
-            Personaje4.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje2);
-            Destroy(Personaje3);
-            Destroy(Personaje5);
-            Destroy(Personaje6);
-            Destroy(Personaje7);
-            Destroy(Personaje8);
-            Destroy(Personaje9);
-            Destroy(Personaje10);
-            Destroy(Personaje11);
-            Destroy(Personaje12);
-            Destroy(Personaje13);
-            Destroy(Personaje14);
-        }
-                if (P5 == true)
-        {
-            Personaje5.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje2);
-            Destroy(Personaje3);
-            Destroy(Personaje4);
-            Destroy(Personaje6);
-            Destroy(Personaje7);
-            Destroy(Personaje8);
-            Destroy(Personaje9);
-            Destroy(Personaje10);
-            Destroy(Personaje11);
-            Destroy(Personaje12);
-            Destroy(Personaje13);
-            Destroy(Personaje14);
-        }
-                if (P6 == true)
-        {
-            Personaje6.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje2);
-            Destroy(Personaje3);
-            Destroy(Personaje4);
-            Destroy(Personaje5);
-            Destroy(Personaje7);
-            Destroy(Personaje8);
-            Destroy(Personaje9);
-            Destroy(Personaje10);
-            Destroy(Personaje11);
-            Destroy(Personaje12);
-            Destroy(Personaje13);
-            Destroy(Personaje14);
-        }
-                if (P7 == true)
-        {
-            Personaje7.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje2);
-            Destroy(Personaje3);
-            Destroy(Personaje4);
-            Destroy(Personaje5);
-            Destroy(Personaje6);
-            Destroy(Personaje8);
-            Destroy(Personaje9);
-            Destroy(Personaje10);
-            Destroy(Personaje11);
-            Destroy(Personaje12);
-            Destroy(Personaje13);
-            Destroy(Personaje14);
-        }
-                if (P8 == true)
-        
-        {
-            Personaje8.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje2);
-            Destroy(Personaje3);
-            Destroy(Personaje4);
-            Destroy(Personaje5);
-            Destroy(Personaje6);
-            Destroy(Personaje7);
-            Destroy(Personaje9);
-            Destroy(Personaje10);
-            Destroy(Personaje11);
-            Destroy(Personaje12);
-            Destroy(Personaje13);
-            Destroy(Personaje14);
-        }
-                if (P9 == true)
-        {
-            Personaje9.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje2);
-            Destroy(Personaje3);
-            Destroy(Personaje4);
-            Destroy(Personaje5);
-            Destroy(Personaje6);
-            Destroy(Personaje7);
-            Destroy(Personaje8);
-            Destroy(Personaje10);
-            Destroy(Personaje11);
-            Destroy(Personaje12);
-            Destroy(Personaje13);
-            Destroy(Personaje14);
-        }
-                if (P10 == true)
-        {
-            Personaje10.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje2);
-            Destroy(Personaje3);
-            Destroy(Personaje4);
-            Destroy(Personaje5);
-            Destroy(Personaje6);
-            Destroy(Personaje7);
-            Destroy(Personaje8);
-            Destroy(Personaje9);
-            Destroy(Personaje11);
-            Destroy(Personaje12);
-            Destroy(Personaje13);
-            Destroy(Personaje14);
-        }
-                if (P11 == true)
-        {
-            Personaje11.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje2);
-            Destroy(Personaje3);
-            Destroy(Personaje4);
-            Destroy(Personaje5);
-            Destroy(Personaje6);
-            Destroy(Personaje7);
-            Destroy(Personaje8);
-            Destroy(Personaje9);
-            Destroy(Personaje10);
-            Destroy(Personaje12);
-            Destroy(Personaje13);
-            Destroy(Personaje14);
-        }
-                if (P12 == true)
-        {
-            Personaje12.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje2);
-            Destroy(Personaje3);
-            Destroy(Personaje4);
-            Destroy(Personaje5);
-            Destroy(Personaje6);
-            Destroy(Personaje7);
-            Destroy(Personaje8);
-            Destroy(Personaje9);
-            Destroy(Personaje10);
-            Destroy(Personaje11);
-            Destroy(Personaje13);
-            Destroy(Personaje14);
-        }
-                if (P13 == true)
-        {
-            Personaje13.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje2);
-            Destroy(Personaje3);
-            Destroy(Personaje4);
-            Destroy(Personaje5);
-            Destroy(Personaje6);
-            Destroy(Personaje7);
-            Destroy(Personaje8);
-            Destroy(Personaje9);
-            Destroy(Personaje10);
-            Destroy(Personaje11);
-            Destroy(Personaje12);
-            Destroy(Personaje14);
-        }
-                if (P14 == true)
-        {
-            Personaje14.SetActive(true);
-            Destroy(Personaje1);
-            Destroy(Personaje2);
-            Destroy(Personaje3);
-            Destroy(Personaje4);
-            Destroy(Personaje5);
-            Destroy(Personaje6);
-            Destroy(Personaje7);
-            Destroy(Personaje8);
-            Destroy(Personaje9);
-            Destroy(Personaje10);
-            Destroy(Personaje11);
-            Destroy(Personaje12);
-            Destroy(Personaje13);
-        }
-
     }
     [System.Serializable] public class ListaTotal
 {
     public GameObject Objetos; 
     public bool P;
+    public int Activo;
 }
 }
